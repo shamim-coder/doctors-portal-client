@@ -36,8 +36,8 @@ const Navbar = () => {
     ];
 
     return (
-        <section className="container mx-auto">
-            <div class="navbar bg-base-100">
+        <header className="py-5 shadow">
+            <div class="navbar bg-base-100 container mx-auto md:px-20">
                 <div class="navbar-start flex-1">
                     <d iv class="dropdown">
                         <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -73,8 +73,8 @@ const Navbar = () => {
 
                     <div class="dropdown dropdown-end ">
                         <label tabindex="0" class="btn btn-ghost btn-circle avatar">
-                            <div class="w-10 rounded-full">
-                                <img src="https://placeimg.com/80/80/people" alt="" />
+                            <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                                <img className="" src="https://placeimg.com/220/220/people" alt="" />
                             </div>
                         </label>
                         <ul tabindex="0" class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
@@ -94,7 +94,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
-        </section>
+        </header>
     );
 };
 
