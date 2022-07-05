@@ -22,7 +22,7 @@ const Testimonials = () => {
             reviewText: "It is a long established fact that by the readable content of a lot layout. The point of using Lorem a more-or-less normal distribu to using Content here, content",
         },
         {
-            id: 2,
+            id: 3,
             name: "Emma Winson",
             address: "California",
             image: people3,
@@ -31,7 +31,7 @@ const Testimonials = () => {
     ];
 
     return (
-        <section className="testimonials">
+        <section className="testimonials mb-20">
             <div className="container max-auto">
                 <div className="py-24">
                     <h4 className="text-primary font-bold text-xl">Testimonials</h4>

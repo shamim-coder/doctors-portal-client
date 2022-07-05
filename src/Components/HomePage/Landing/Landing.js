@@ -34,13 +34,13 @@ const Landing = () => {
     ];
 
     return (
-        <section id="landing" className="pb-10">
-            <div class="hero min-h-screen container mx-auto mb-10">
-                <div class="flex items-center justify-center flex-col lg:flex-row-reverse gap-10">
+        <section id="landing">
+            <div className="hero min-h-screen container mx-auto">
+                <div className="flex items-center justify-center flex-col lg:flex-row-reverse gap-10">
                     <img className="w-[594px]" src={chair} alt="" />
                     <div>
-                        <h1 class="text-5xl font-bold text-darker">Your New Smile Starts Here</h1>
-                        <p class="py-6 text-darker">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the</p>
+                        <h1 className="text-5xl font-bold text-darker">Your New Smile Starts Here</h1>
+                        <p className="py-6 text-darker">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the</p>
                         <PrimaryButton>Get Started</PrimaryButton>
                     </div>
                 </div>

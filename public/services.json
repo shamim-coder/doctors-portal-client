@@ -1,0 +1,238 @@
+[
+    {
+        "name": "Teeth Orthodontics",
+        "slots": [
+            {
+                "name": "Assoc. Prof. Dr. Aslam Almehdi",
+                "qualification": "Ph.D. (Periodontal Plastic Surgery)",
+                "time": "08.00 AM - 08.30 AM"
+            },
+            {
+                "name": "Dr. Uttom Kumar Shet",
+                "qualification": "BDS (Dhaka Dental College), MSD ( South Kore)",
+                "time": "08.30 AM - 09.00 AM"
+            },
+            {
+                "name": "DR. SK. NAZRUL ISLAM",
+                "qualification": "BDS(DU) PGT(BKK) FAES(USA) MCPS(BCPS)",
+                "time": "09.30 AM - 10.00 AM"
+            },
+            {
+                "name": "Dr. Md. Abdullah Khan",
+                "qualification": " BDS, PGT ( Japan )",
+                "time": "10.00 AM - 10.30 AM"
+            },
+            {
+                "name": "Dr. M. A. Sikder",
+                "qualification": "BDS, Ph.D ( Japan )",
+                "time": "11.30 AM - 12.00 AM"
+            },
+            {
+                "name": "Professor Dr. Md. Shamsul Alam",
+                "qualification": "BDS, DCD(USSR), FADI(USA)",
+                "time": "1.00 PM - 1.30 PM"
+            },
+            {
+                "name": "Professor Dr. Khandaker Abdul Azim",
+                "qualification": "BDS, Dip, OMS ( Australia )",
+                "time": "2.00 PM - 2.30 PM"
+            },
+            {
+                "name": "Dr. Mohammed Shafi Ullah",
+                "qualification": "MBBS, MS, BDS, MCPS, MDRA(USA)",
+                "time": "2.30 PM - 3.00 PM"
+            }
+        ]
+    },
+    {
+        "name": "Cosmetic Dentistry",
+        "slots": [
+            {
+                "name": "Professor Dr. Md. Abdul Kalam",
+                "qualification": "MBBS, FCPS ( Surgery )",
+                "time": "08.00 AM - 08.30 AM"
+            },
+            {
+                "name": "Prof. Dr. Shafquat Hussain Khundker",
+                "qualification": "MBBS, FCPS, FICS",
+                "time": "08.30 AM - 09.00 AM"
+            },
+            {
+                "name": "Dr. A.K.M Fazlul Haque",
+                "qualification": "MBBS, FRCS (UK)",
+                "time": "09.30 AM - 10.00 AM"
+            },
+            {
+                "name": "Dr. Abdullah Al Tariq",
+                "qualification": "MBBS, FCPS",
+                "time": "10.00 AM - 10.30 AM"
+            },
+            {
+                "name": "Dr. Kawser Ahmed",
+                "qualification": "MBBS (DMC), FCPS (Surgery)",
+                "time": "11.30 AM - 12.00 AM"
+            },
+            {
+                "name": "Dr. Liman Kumar Dhar",
+                "qualification": "MBBS, FCPS - Part-ll trainee",
+                "time": "1.00 PM - 1.30 PM"
+            }
+        ]
+    },
+    {
+        "name": "Teeth Cleaning",
+        "slots": [
+            {
+                "name": "Dr. Jahangir Kabir",
+                "qualification": "B.D.S, PGT ( G. Dentistry )",
+                "time": "08.00 AM - 08.30 AM"
+            },
+            {
+                "name": "Prof. Dr. M Touhidul Haque",
+                "qualification": "BDS, DPH ( England ), PGT",
+                "time": "08.30 AM - 09.00 AM"
+            },
+            {
+                "name": "Prof. Dr. Md. Sarwar Ferdous",
+                "qualification": "BDS, PGT",
+                "time": "09.30 AM - 10.00 AM"
+            },
+            {
+                "name": "Prof. Dr. Md. Ashraful Islam",
+                "qualification": "BDS, PGT ( BSMMU )",
+                "time": "10.00 AM - 10.30 AM"
+            },
+            {
+                "name": "Prof. Dr. Tarek Alam",
+                "qualification": "BDS( Dhaka Dental College)",
+                "time": "11.30 AM - 12.00 AM"
+            },
+            {
+                "name": "Dr. Mohammad Jahangir Talukder",
+                "qualification": "BDS.( DU), PGT, FIMS, FICD(USA)",
+                "time": "1.00 PM - 1.30 PM"
+            },
+            {
+                "name": "Prof. Dr. R. K. Saha",
+                "qualification": "BDS From University of Dhaka",
+                "time": "2.00 PM - 2.30 PM"
+            }
+        ]
+    },
+    {
+        "name": "Cavity Protection",
+        "slots": [
+            {
+                "name": "Dr Priyanka Rani Shil",
+                "qualification": "BDS(Dhaka Dental College)",
+                "time": "08.00 AM - 08.30 AM"
+            },
+            {
+                "name": "Qazi Tanzin Ahmed",
+                "qualification": "BDS (DDC), MPH(BSMMU), FICD(USA)",
+                "time": "08.30 AM - 09.00 AM"
+            },
+            {
+                "name": "Dr. Sanzida Khan",
+                "qualification": "BDS (DU), BDS (DU)",
+                "time": "09.30 AM - 10.00 AM"
+            },
+            {
+                "name": "Dr. Fatema Tuj Zohora Eva",
+                "qualification": "BDS (DU), PGT ( Oral and Maxillofacial Surgery)",
+                "time": "10.00 AM - 10.30 AM"
+            },
+            {
+                "name": "Dr. Romana Afroze",
+                "qualification": "BDS(DU), PGT",
+                "time": "11.30 AM - 12.00 AM"
+            },
+            {
+                "name": "Dr Md Mahedi Hasan (Shawon)",
+                "qualification": "B.D.S , PGT ( Oral & Maxillofacial Surgery )",
+                "time": "1.00 PM - 1.30 PM"
+            },
+            {
+                "name": "Dr. Md Emranul Islam",
+                "qualification": "BDS, MS (OMS)",
+                "time": "2.00 PM - 2.30 PM"
+            }
+        ]
+    },
+    {
+        "name": "Pediatric Dental",
+        "slots": [
+            {
+                "name": "Prof. Dr. Gazi Shamim Hassan",
+                "qualification": "BDS(Dhaka Dental College)",
+                "time": "08.00 AM - 08.30 AM"
+            },
+            {
+                "name": "Prof. Dr. M Touhidul Haque",
+                "qualification": "BDS (DU), PGT",
+                "time": "08.30 AM - 09.00 AM"
+            },
+            {
+                "name": "Dr. Nabil Rahman",
+                "qualification": "BDS, FCPS",
+                "time": "09.30 AM - 10.00 AM"
+            },
+            {
+                "name": "Prof. Dr. Md. Ashraful Islam",
+                "qualification": "aa",
+                "time": "10.00 AM - 10.30 AM"
+            },
+            {
+                "name": "Prof. Dr. Tarek Alam",
+                "qualification": "aa",
+                "time": "11.30 AM - 12.00 AM"
+            },
+            {
+                "name": "Dr. Fatema Tuj Zohora Eva",
+                "qualification": "BDS (DU), PGT ( Oral and Maxillofacial Surgery)",
+                "time": "10.00 AM - 10.30 AM"
+            },
+            {
+                "name": "Dr. Romana Afroze",
+                "qualification": "BDS(DU), PGT",
+                "time": "11.30 AM - 12.00 AM"
+            }
+        ]
+    },
+    {
+        "name": "Oral Surgery",
+        "slots": [
+            {
+                "name": "Prof. Dr. Md. Ashraful Islam",
+                "qualification": "BDS, PGT ( BSMMU )",
+                "time": "10.00 AM - 10.30 AM"
+            },
+
+            {
+                "name": "Dr. Mohammad Jahangir Talukder",
+                "qualification": "BDS.( DU), PGT, FIMS, FICD(USA)",
+                "time": "1.00 PM - 1.30 PM"
+            },
+            {
+                "name": "Prof. Dr. M Touhidul Haque",
+                "qualification": "BDS (DU), PGT",
+                "time": "08.30 AM - 09.00 AM"
+            },
+            {
+                "name": "Dr. Fatema Tuj Zohora Eva",
+                "qualification": "BDS.( DU), PGT, FIMS, FICD(USA)",
+                "time": "1.00 PM - 1.30 PM"
+            },
+            {
+                "name": "Prof. Dr. Tarek Alam",
+                "qualification": "BDS( Dhaka Dental College)",
+                "time": "11.30 AM - 12.00 AM"
+            },
+            {
+                "name": "Prof. Dr. Shafquat Hussain Khundker",
+                "qualification": "MBBS, FCPS, FICS",
+                "time": "08.30 AM - 09.00 AM"
+            }
+        ]
+    }
+]

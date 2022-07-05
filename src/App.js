@@ -3,29 +3,56 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Shared/Navbar/Navbar";
 import About from "./Components/Pages/About/About";
-import Appointments from "./Components/Pages/Appointments/Appointments";
 import Reviews from "./Components/Pages/Reviews/Reviews";
 import Profile from "./Components/Pages/Profile/Profile";
 import Contact from "./Components/Pages/Contact/Contact";
 import Home from "./Components/HomePage/Home/Home";
-import Login from "./Components/Pages/Login/Login";
+import Login from "./Components/Pages/Authentication/Login/Login";
+import Footer from "./Components/Shared/Footer/Footer";
+import Appointments from "./Components/Pages/Appointments/Appointments/Appointments";
+import AvailableSlots from "./Components/Pages/Appointments/AvailableSlots/AvailableSlots";
+import NotFound from "./Components/Shared/NotFound/NotFound";
+import Signup from "./Components/Pages/Authentication/Signup/Signup";
+import ForgotPassword from "./Components/Pages/Authentication/ForgotPassword/ForgotPassword";
+import RequireAuth from "./Components/Pages/Authentication/RequireAuth/RequireAuth";
+import { createContext, useState } from "react";
+
+export const UserContext = createContext({});
 
 function App() {
+    const [user, setUser] = useState({});
     return (
         <>
-            <Navbar />
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/appointments" element={<Appointments />} />
-                <Route path="/reviews" element={<Reviews />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/login" element={<Login />} />
+            <UserContext.Provider value={[user, setUser]}>
+                <Navbar />
 
-                <Route path="/profile" element={<Profile />} />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<About />} />
+                    <Route
+                        path="/appointments"
+                        element={
+                            <RequireAuth>
+                                <Appointments />
+                            </RequireAuth>
+                        }
+                    >
+                        <Route path=":serviceId" element={<AvailableSlots />} />
+                    </Route>
+                    <Route path="/reviews" element={<Reviews />} />
+                    <Route path="/contact" element={<Contact />} />
+                    <Route path="/login" element={<Login />} />
 
-                <Route path="*" element />
-            </Routes>
+                    <Route path="/signup" element={<Signup />} />
+
+                    <Route path="/forgot" element={<ForgotPassword />} />
+
+                    <Route path="/profile" element={<Profile />} />
+
+                    <Route path="*" element={<NotFound />} />
+                </Routes>
+                <Footer />
+            </UserContext.Provider>
         </>
     );
 }
