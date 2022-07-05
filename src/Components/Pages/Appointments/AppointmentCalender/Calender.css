@@ -1,0 +1,6 @@
+.selected-day {
+    background-color: #19d3ae;
+}
+.selected-day:hover:not([aria-disabled="true"]) {
+    background-color: #19d3ae;
+}
