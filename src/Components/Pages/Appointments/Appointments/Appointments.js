@@ -18,7 +18,7 @@ const Appointments = () => {
             <div className="container max-auto">
                 <AvailableAppointments selected={selected} />
             </div>
-            <Outlet context={[treatment, setTreatment]} />
+            <Outlet context={[treatment, setTreatment, selected]} />
             {treatment && <BookingModal date={selected} setTreatment={setTreatment} treatment={treatment} />}
         </section>
     );

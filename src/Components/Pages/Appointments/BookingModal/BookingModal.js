@@ -1,28 +1,48 @@
 import { format } from "date-fns";
-import React from "react";
+import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../Utilities/Firebase.init";
+import { toast } from "react-toastify";
 
 const BookingModal = ({ setTreatment, treatment, date }) => {
-    const { serviceName, slot } = treatment;
+    const { service, slot, refetch } = treatment;
     const selectedDate = date && format(date, "PP");
-
+    const [updating, setUpdating] = useState(false);
     const [user] = useAuthState(auth);
 
     const handleBooking = (e) => {
         e.preventDefault();
-        const doctor = e.target.doctor.value;
-        const time = e.target.time.value;
-        const appointmentDate = e.target.date.value + " " + time;
-        const user = e.target.name.value;
-        const phone = e.target.phone.value;
-        const email = e.target.email.value;
+        setUpdating(true);
 
-        const patientInfo = { serviceName, doctor, appointmentDate, user, phone, email };
+        const bookingInfo = {
+            treatmentId: service._id,
+            treatmentName: service.name,
+            patientName: user?.displayName,
+            doctor: slot?.name,
+            date: selectedDate,
+            slot: slot?.time,
+            email: user?.email,
+            phone: e.target.phone.value,
+        };
 
-        console.log(patientInfo);
-        e.target.reset();
-        setTreatment(null);
+        fetch("http://localhost:5000/booking", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(bookingInfo),
+        })
+            .then((res) => res.json())
+            .then((result) => {
+                if (result.success) {
+                    toast.success(`Appointment is set, ${selectedDate} at ${slot?.time}`);
+                } else {
+                    toast.error(`Already have an appointment on, ${result?.existsData?.date} at ${result?.existsData?.slot}`);
+                }
+                e.target.reset();
+                refetch()
+                setTreatment(null);
+            });
     };
 
     return (
@@ -36,7 +56,7 @@ const BookingModal = ({ setTreatment, treatment, date }) => {
 
                     <form onSubmit={handleBooking} className="card-body">
                         <h3 className="text-xl mb-5">
-                            Booking for : <span className="text-primary">{serviceName}</span>
+                            Booking for : <span className="text-primary">{service?.name}</span>
                         </h3>
                         <div className="form-control">
                             {/* <label className="label">
@@ -81,7 +101,7 @@ const BookingModal = ({ setTreatment, treatment, date }) => {
                         </div>
 
                         <div className="form-control mt-6">
-                            <button className="btn bg-darker text-base text-gray-300 font-normal">Submit</button>
+                            <button className={`btn bg-darker ${updating && "loading"} text-base text-gray-300 font-normal`}>Submit</button>
                         </div>
                     </form>
                     {/* 

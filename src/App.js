@@ -16,6 +16,8 @@ import Signup from "./Components/Pages/Authentication/Signup/Signup";
 import ForgotPassword from "./Components/Pages/Authentication/ForgotPassword/ForgotPassword";
 import RequireAuth from "./Components/Pages/Authentication/RequireAuth/RequireAuth";
 import { createContext, useState } from "react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const UserContext = createContext({});
 
@@ -52,6 +54,7 @@ function App() {
                     <Route path="*" element={<NotFound />} />
                 </Routes>
                 <Footer />
+                <ToastContainer />
             </UserContext.Provider>
         </>
     );

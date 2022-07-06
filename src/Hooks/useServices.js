@@ -1,21 +1,16 @@
-import { useEffect, useState } from "react";
+import { useQuery } from "react-query";
 
-const useServices = () => {
-    const [services, setServices] = useState([]);
-    const [loading, setLoading] = useState(false);
+const useServices = (date) => {
+    const {
+        data: services,
+        isLoading,
+        refetch,
+    } = useQuery(["available", date], async () => {
+        const res = await fetch(`http://localhost:5000/available?date=${date}`);
+        return await res.json();
+    });
 
-    useEffect(() => {
-        setLoading(true);
-        const getFetchData = async () => {
-            const response = await fetch("http://localhost:5000/services");
-            const data = await response.json();
-            setServices(data);
-            setLoading(false);
-        };
-        getFetchData();
-    }, []);
-
-    return { services, setServices, loading };
+    return { services, loading: isLoading, refetch };
 };
 
 export default useServices;
