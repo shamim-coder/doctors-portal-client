@@ -18,6 +18,10 @@ import RequireAuth from "./Components/Pages/Authentication/RequireAuth/RequireAu
 import { createContext, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Dashboard from "./Components/Pages/Dashboard/Dashboard";
+import MyAppointments from "./Components/Pages/Dashboard/MyAppointments";
+import MyReview from "./Components/Pages/Dashboard/MyReview";
+import Setting from "./Components/Pages/Dashboard/Setting";
 
 export const UserContext = createContext({});
 
@@ -31,6 +35,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
+
                     <Route
                         path="/appointments"
                         element={
@@ -41,14 +46,26 @@ function App() {
                     >
                         <Route path=":serviceId" element={<AvailableSlots />} />
                     </Route>
+
+                    <Route
+                        path="/dashboard"
+                        element={
+                            <RequireAuth>
+                                <Dashboard />
+                            </RequireAuth>
+                        }
+                    >
+                        <Route index element={<MyAppointments />} />
+                        <Route path="my-review" element={<MyReview />} />
+                        <Route path="my-appointment" element={<MyAppointments />} />
+                        <Route path="setting" element={<Setting />} />
+                    </Route>
+
                     <Route path="/reviews" element={<Reviews />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/login" element={<Login />} />
-
                     <Route path="/signup" element={<Signup />} />
-
                     <Route path="/forgot" element={<ForgotPassword />} />
-
                     <Route path="/profile" element={<Profile />} />
 
                     <Route path="*" element={<NotFound />} />

@@ -72,7 +72,7 @@ const Navbar = () => {
                                     </NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/settings">Settings</NavLink>
+                                    <NavLink to="/dashboard">Dashboard</NavLink>
                                 </li>
                                 <li>
                                     <NavLink onClick={() => signOut(auth)} to="/login">

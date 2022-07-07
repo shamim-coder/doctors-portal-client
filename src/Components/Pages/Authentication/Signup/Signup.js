@@ -6,6 +6,7 @@ import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from "react-fi
 import { useUpdateProfile } from "react-firebase-hooks/auth";
 // import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { UserContext } from "../../../../App";
+import useToken from "../../../../Hooks/useToken";
 
 const Signup = () => {
     const [user, setUser] = useContext(UserContext);
@@ -21,16 +22,13 @@ const Signup = () => {
         handleSubmit,
         reset,
         formState: { errors },
-    } = useForm({
-        // defaultValues: {
-        //     name: "Shamim Reza",
-        //     email: "wpshamim@gmail.com",
-        // },
-    });
+    } = useForm();
 
     const [createUserWithEmailAndPassword, signupUser, loading, signupError] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const [updateProfile] = useUpdateProfile(auth);
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+
+    const [token] = useToken(signupUser || googleUser);
 
     const handleSignup = async (data) => {
         const displayName = data.name;

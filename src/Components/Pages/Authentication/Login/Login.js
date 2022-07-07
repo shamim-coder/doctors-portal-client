@@ -42,8 +42,6 @@ const Login = () => {
         }
     }, [error, googleError]);
 
-    console.log(errorMessage);
-
     return (
         <section className="pb-20">
             <div className="card-body w-3/12 mx-auto shadow mt-14">
