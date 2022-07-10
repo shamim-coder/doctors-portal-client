@@ -75,7 +75,13 @@ const Navbar = () => {
                                     <NavLink to="/dashboard">Dashboard</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink onClick={() => signOut(auth)} to="/login">
+                                    <NavLink
+                                        onClick={() => {
+                                            signOut(auth);
+                                            localStorage.removeItem("accessToken");
+                                        }}
+                                        to="/login"
+                                    >
                                         Logout
                                     </NavLink>
                                 </li>

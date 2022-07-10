@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import useToken from "../../../../Hooks/useToken";
 import ErrorAlert from "../../../Shared/ErrorAlert/ErrorAlert";
 import auth from "../../../Utilities/Firebase.init";
 
@@ -22,16 +23,19 @@ const Login = () => {
     const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
 
+    // get access token and verify with signin and google user
+    const [token] = useToken(user || googleUser);
+
     const handleLogin = async (data) => {
         await signInWithEmailAndPassword(data.email, data.password);
         reset();
     };
 
     useEffect(() => {
-        if (user || googleUser) {
+        if (token) {
             navigate(from, { replace: true });
         }
-    }, [from, googleUser, navigate, user]);
+    }, [from, navigate, token]);
 
     useEffect(() => {
         if (googleError) {

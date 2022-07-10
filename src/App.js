@@ -22,6 +22,9 @@ import Dashboard from "./Components/Pages/Dashboard/Dashboard";
 import MyAppointments from "./Components/Pages/Dashboard/MyAppointments";
 import MyReview from "./Components/Pages/Dashboard/MyReview";
 import Setting from "./Components/Pages/Dashboard/Setting";
+import Error from "./Components/Shared/Error/Error";
+import Users from "./Components/Pages/Dashboard/Users";
+import RequireAdmin from "./Components/Pages/Authorization/RequireAdmin";
 
 export const UserContext = createContext({});
 
@@ -59,6 +62,14 @@ function App() {
                         <Route path="my-review" element={<MyReview />} />
                         <Route path="my-appointment" element={<MyAppointments />} />
                         <Route path="setting" element={<Setting />} />
+                        <Route
+                            path="users"
+                            element={
+                                <RequireAdmin>
+                                    <Users />
+                                </RequireAdmin>
+                            }
+                        />
                     </Route>
 
                     <Route path="/reviews" element={<Reviews />} />

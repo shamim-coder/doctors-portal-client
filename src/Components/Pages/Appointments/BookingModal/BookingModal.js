@@ -40,7 +40,7 @@ const BookingModal = ({ setTreatment, treatment, date }) => {
                     toast.error(`Already have an appointment on, ${result?.existsData?.date} at ${result?.existsData?.slot}`);
                 }
                 e.target.reset();
-                refetch()
+                refetch();
                 setTreatment(null);
             });
     };
@@ -104,12 +104,6 @@ const BookingModal = ({ setTreatment, treatment, date }) => {
                             <button className={`btn bg-darker ${updating && "loading"} text-base text-gray-300 font-normal`}>Submit</button>
                         </div>
                     </form>
-                    {/* 
-                    <div className="modal-action">
-                        <label htmlFor="booking-modal" className="btn">
-                            Yay!
-                        </label>
-                    </div> */}
                 </div>
             </div>
         </div>

@@ -40,10 +40,10 @@ const Signup = () => {
     };
 
     useEffect(() => {
-        if (signupUser || googleUser) {
+        if (token) {
             navigate(from, { replace: true });
         }
-    }, [from, googleUser, navigate, signupUser]);
+    }, [from, token, navigate]);
 
     // const handleSignup = async (data) => {
     //     setLoading(true);
