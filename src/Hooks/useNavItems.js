@@ -7,7 +7,7 @@ const useNavItems = () => {
     useEffect(() => {
         setLoading(true);
         const getFetchData = async () => {
-            const response = await fetch("http://localhost:5000/navItems");
+            const response = await fetch("https://doctors-portal-shamim.herokuapp.com/navItems");
             const data = await response.json();
             setNavItems(data);
             setLoading(false);
