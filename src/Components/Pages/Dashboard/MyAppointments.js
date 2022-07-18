@@ -3,38 +3,12 @@ import auth from "../../Utilities/Firebase.init";
 import { useQuery } from "react-query";
 import Spinner from "../../Shared/Spinner/Spinner";
 import { signOut } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
-import Error from "../../Shared/Error/Error";
-import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const MyAppointments = () => {
     const [user] = useAuthState(auth);
-    // const [isLoading, setIsLoading] = useState(true);
-    // const [booking, setBooking] = useState([]);
-    const navigate = useNavigate();
 
-    // useEffect(() => {
-    //     if (user) {
-    //         fetch(`https://doctors-portal-shamim.herokuapp.com/booking?email=${user?.email}`, {
-    //             method: "GET",
-    //             headers: {
-    //                 authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-    //             },
-    //         })
-    //             .then((res) => {
-    //                 if (res.status === 401 || res.status === 403) {
-    //                     signOut(auth);
-    //                     localStorage.removeItem("accessToken");
-    //                     navigate("/login");
-    //                 }
-    //                 return res.json();
-    //             })
-    //             .then((data) => {
-    //                 setBooking(data);
-    //                 setIsLoading(false);
-    //             });
-    //     }
-    // }, [navigate, user]);
+    const navigate = useNavigate();
 
     const { data: booking, isLoading } = useQuery(["booking", user?.email], async () => {
         const res = await fetch(`https://doctors-portal-shamim.herokuapp.com/booking?email=${user?.email}`, {
@@ -66,19 +40,34 @@ const MyAppointments = () => {
                         <th>Date</th>
                         <th>Slot</th>
                         <th>Phone</th>
+                        <th>Price</th>
+                        <th>Payment</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {booking.map((book, index) => (
-                        <tr key={book._id}>
-                            <th>{index + 1}</th>
-                            <td>{book.treatmentName}</td>
-                            <td>{book.doctor}</td>
-                            <td>{book.date}</td>
-                            <td>{book.slot}</td>
-                            <td>{book.phone}</td>
-                        </tr>
-                    ))}
+                    {booking.map((book, index) => {
+                        const { _id, treatmentName, doctor, date, slot, phone, price, paid } = book;
+                        return (
+                            <tr key={_id}>
+                                <th>{index + 1}</th>
+                                <td>{treatmentName}</td>
+                                <td>{doctor}</td>
+                                <td>{date}</td>
+                                <td>{slot}</td>
+                                <td>{phone}</td>
+                                <td>${price}</td>
+                                <td>
+                                    {price && !paid ? (
+                                        <Link to={`/dashboard/payment/${_id}`} className="text-white py-1 text-base btn-sm btn-success">
+                                            Pay
+                                        </Link>
+                                    ) : (
+                                        <p className="text-success text-base">Paid</p>
+                                    )}
+                                </td>
+                            </tr>
+                        );
+                    })}
                 </tbody>
             </table>
         </div>

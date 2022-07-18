@@ -22,7 +22,7 @@ const AvailableAppointments = ({ selected }) => {
                 {loading
                     ? "Loading..."
                     : services?.map((service) => {
-                          const { available, name, _id } = service;
+                          const { available, name, _id, price } = service;
                           return (
                               <NavLink
                                   style={({ isActive }) => (isActive ? { backgroundColor: "#3A4256", color: "#D1D5DB" } : undefined)}
@@ -31,6 +31,7 @@ const AvailableAppointments = ({ selected }) => {
                                   className="transition rounded-2xl hover:text-gray-300 bg-white hover:bg-darker shadow-md py-14 text-center"
                               >
                                   <h3 className="text-primary font-bold text-xl mb-2">{name}</h3>
+                                  <p className="text-lg text-secondary font-bold">Price: ${price}</p>
                                   <p className={`${!available.length && "text-red-500"}`}>
                                       Available {available.length > 1 ? "Spaces" : "Space"}: {available.length}
                                   </p>

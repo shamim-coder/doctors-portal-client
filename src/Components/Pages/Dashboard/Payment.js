@@ -12,7 +12,7 @@ const Payment = () => {
     const { id } = useParams();
 
     const { data: appointment, isLoading } = useQuery(["booking", id], async () => {
-        const res = await fetch(`http://localhost:5000/booking/${id}`);
+        const res = await fetch(`https://doctors-portal-shamim.herokuapp.com/booking/${id}`);
         return await res.json();
     });
 

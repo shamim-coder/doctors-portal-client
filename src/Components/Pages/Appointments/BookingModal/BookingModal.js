@@ -26,7 +26,7 @@ const BookingModal = ({ setTreatment, treatment, date }) => {
             price: service.price,
         };
 
-        fetch("http://localhost:5000/booking", {
+        fetch("https://doctors-portal-shamim.herokuapp.com/booking", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

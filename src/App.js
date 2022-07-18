@@ -1,5 +1,3 @@
-import "./App.css";
-
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Shared/Navbar/Navbar";
 import About from "./Components/Pages/About/About";
@@ -25,6 +23,7 @@ import Setting from "./Components/Pages/Dashboard/Setting";
 import Error from "./Components/Shared/Error/Error";
 import Users from "./Components/Pages/Dashboard/Users";
 import RequireAdmin from "./Components/Pages/Authorization/RequireAdmin";
+import Payment from "./Components/Pages/Dashboard/Payment";
 
 export const UserContext = createContext({});
 
@@ -61,7 +60,7 @@ function App() {
                         <Route index element={<MyAppointments />} />
                         <Route path="my-review" element={<MyReview />} />
                         <Route path="my-appointment" element={<MyAppointments />} />
-                        <Route path="setting" element={<Setting />} />
+                        <Route path="payment/:id" element={<Payment />} />
                         <Route
                             path="users"
                             element={
