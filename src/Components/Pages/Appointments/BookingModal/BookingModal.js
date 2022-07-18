@@ -23,9 +23,10 @@ const BookingModal = ({ setTreatment, treatment, date }) => {
             slot: slot?.time,
             email: user?.email,
             phone: e.target.phone.value,
+            price: service.price,
         };
 
-        fetch("https://doctors-portal-shamim.herokuapp.com/booking", {
+        fetch("http://localhost:5000/booking", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -56,7 +57,7 @@ const BookingModal = ({ setTreatment, treatment, date }) => {
 
                     <form onSubmit={handleBooking} className="card-body">
                         <h3 className="text-xl mb-5">
-                            Booking for : <span className="text-primary">{service?.name}</span>
+                            Booking for : <span className="text-primary">{service?.name}</span>, Price: <span className="text-primary">${service?.price}</span>
                         </h3>
                         <div className="form-control">
                             {/* <label className="label">
