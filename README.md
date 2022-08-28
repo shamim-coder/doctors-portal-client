@@ -1,6 +1,6 @@
 # Doctors Portal
 
-Live Site [https://easystock-bd.web.app](https://easystock-bd.web.app).
+Live Site [https://doctors-portal-shamim.web.app](https://doctors-portal-shamim.web.app).
 
 ## Features & Functionalities
 
